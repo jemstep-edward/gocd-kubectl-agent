@@ -4,7 +4,7 @@ MAINTAINER Jemstep Dev <dev@jemstep.com>
 ENV KUBE_LATEST_VERSION="v1.3.5"
 
 RUN apt-get -y update && \
-        apt-get -y install gnupg2 apt-transport-https
+        apt-get -y install gnupg2 apt-transport-https net-tools
 
 RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
         touch /etc/apt/sources.list.d/kubernetes.list  && \
