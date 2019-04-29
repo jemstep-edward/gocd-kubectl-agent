@@ -11,3 +11,9 @@ RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add 
         echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list && \
         apt-get update && \
         apt-get install -y kubectl
+
+USER go
+COPY ca.crt     /home/go/ca.crt
+COPY client.crt /home/go/client.crt
+COPY client.key /home/go/client.key
+COPY config     /home/go/config
