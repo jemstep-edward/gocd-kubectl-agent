@@ -12,6 +12,9 @@ RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add 
         apt-get update && \
         apt-get install -y kubectl
 
+RUN mkdir /go && \
+        chown go /go
+
 USER go
 COPY ca.crt     /home/go/ca.crt
 COPY client.crt /home/go/client.crt
