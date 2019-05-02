@@ -15,8 +15,11 @@ RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add 
 RUN mkdir /go && \
         chown go /go
 
-USER go
 COPY ca.crt     /home/go/ca.crt
 COPY client.crt /home/go/client.crt
 COPY client.key /home/go/client.key
 COPY config     /home/go/.kube/config
+
+RUN chown -R go /home/go/*
+
+USER go
