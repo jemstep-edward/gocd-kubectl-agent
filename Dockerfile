@@ -12,14 +12,14 @@ RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add 
         apt-get update && \
         apt-get install -y kubectl
 
-RUN mkdir /go && \
-        chown go /go
+RUN mkdir /kube-auth && \
+        chown go /kube-auth
 
-COPY ca.crt     /home/go/ca.crt
-COPY client.crt /home/go/client.crt
-COPY client.key /home/go/client.key
+COPY ca.crt     /kube-auth/ca.crt
+COPY client.crt /kube-auth/client.crt
+COPY client.key /kube-auth/client.key
 COPY config     /home/go/.kube/config
 
-RUN chown -R go /home/go/*
+RUN chown -R go /home/go/.kube
 
 USER go

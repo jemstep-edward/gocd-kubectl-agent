@@ -1,7 +1,7 @@
 apiVersion: v1
 clusters:
 - cluster:
-    certificate-authority: /home/go/ca.crt
+    certificate-authority: /kube-auth/ca.crt
     server: https://MASTER_NODE_IP:MASTER_NODE_PORT
   name: minikube
 contexts:
@@ -15,5 +15,5 @@ preferences: {}
 users:
 - name: minikube
   user:
-    client-certificate: /home/go/client.crt
-    client-key: /home/go/client.key
+    client-certificate: /kube-auth/client.crt
+    client-key: /kube-auth/client.key
