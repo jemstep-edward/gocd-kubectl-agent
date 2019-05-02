@@ -22,5 +22,3 @@ COPY config     /home/go/.kube/config
 
 RUN chown -R go /home/go/.kube && \
         chown go /kube-auth/*
-
-USER go
