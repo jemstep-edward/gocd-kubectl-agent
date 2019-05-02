@@ -20,6 +20,7 @@ COPY client.crt /kube-auth/client.crt
 COPY client.key /kube-auth/client.key
 COPY config     /home/go/.kube/config
 
-RUN chown -R go /home/go/.kube
+RUN chown -R go /home/go/.kube && \
+        chown go /kube-auth/*
 
 USER go
