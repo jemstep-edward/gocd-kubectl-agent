@@ -19,4 +19,4 @@ USER go
 COPY ca.crt     /home/go/ca.crt
 COPY client.crt /home/go/client.crt
 COPY client.key /home/go/client.key
-COPY config     /home/go/config
+COPY config     /home/go/.kube/config
